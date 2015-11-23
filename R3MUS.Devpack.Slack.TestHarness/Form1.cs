@@ -35,5 +35,18 @@ namespace R3MUS.Devpack.Slack.TestHarness
             var response = Plugin.DeactivateUser(txtbxGroup.Text, txtbxToken.Text, txtbxUserEmail.Text);
             listBox1.Items.Insert(0, string.Format("DeactivateUser returned {0}", response.ToString()));
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Plugin.SendDirectMessage(txtbxMsg.Text, txtbxUser.Text, txtbxToken.Text);
+                listBox1.Items.Insert(0, string.Format("Sent {0} to {1}", txtbxMsg.Text, txtbxUser.Text));
+            }
+            catch(Exception ex)
+            {
+                listBox1.Items.Insert(0, string.Format("Error: {0}", ex.Message));
+            }
+        }
     }
 }
