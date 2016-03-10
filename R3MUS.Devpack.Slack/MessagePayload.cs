@@ -12,6 +12,9 @@ namespace R3MUS.Devpack.Slack
         [JsonProperty("text")]
         public string Text { get; set; }
 
+        [JsonProperty("link_names")]
+        public int LinkNames { get { return 1; } set { } }
+
         [JsonProperty("attachments")]
         public List<MessagePayloadAttachment> Attachments { get; set; }
     }

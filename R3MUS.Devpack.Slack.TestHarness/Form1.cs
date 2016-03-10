@@ -40,8 +40,8 @@ namespace R3MUS.Devpack.Slack.TestHarness
         {
             try
             {
-                Plugin.SendDirectMessage(txtbxMsg.Text, txtbxUser.Text, txtbxToken.Text);
-                //Plugin.SendToRoom(txtbxMsg.Text, txtbxGroup.Text, txtbxToken.Text, "");
+                //Plugin.SendDirectMessage(txtbxMsg.Text, txtbxUser.Text, txtbxToken.Text);
+                Plugin.SendToRoom(txtbxMsg.Text, txtbxGroup.Text, txtbxToken.Text, "C-3PO");
                 listBox1.Items.Insert(0, string.Format("Sent {0} to {1}", txtbxMsg.Text, txtbxUser.Text));
             }
             catch(Exception ex)
