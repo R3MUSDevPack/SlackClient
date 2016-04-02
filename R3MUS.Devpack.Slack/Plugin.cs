@@ -7,10 +7,13 @@ using System.Text;
 
 namespace R3MUS.Devpack.Slack
 {
-    public class Plugin
+    /// <summary>
+    /// This file is a container for the static methods involved in Slack
+    /// </summary>
+    public partial class Plugin
     {
         private static string url = "http://{0}.slack.com/api/";
-
+        
         public static void SendToRoom(string message, string roomname, string token, string username)
         {
             try
