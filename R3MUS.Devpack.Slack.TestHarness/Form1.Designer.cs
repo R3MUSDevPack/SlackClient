@@ -43,6 +43,9 @@
             this.txtbxUser = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtbxChannel = new System.Windows.Forms.TextBox();
+            this.button5 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -119,9 +122,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(53, 218);
+            this.listBox1.Location = new System.Drawing.Point(53, 245);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(747, 277);
+            this.listBox1.Size = new System.Drawing.Size(747, 316);
             this.listBox1.TabIndex = 8;
             // 
             // button3
@@ -176,11 +179,40 @@
             this.label5.TabIndex = 14;
             this.label5.Text = "Message";
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(50, 208);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(46, 13);
+            this.label6.TabIndex = 16;
+            this.label6.Text = "Channel";
+            // 
+            // txtbxChannel
+            // 
+            this.txtbxChannel.Location = new System.Drawing.Point(164, 205);
+            this.txtbxChannel.Name = "txtbxChannel";
+            this.txtbxChannel.Size = new System.Drawing.Size(221, 20);
+            this.txtbxChannel.TabIndex = 15;
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(405, 192);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(141, 48);
+            this.button5.TabIndex = 17;
+            this.button5.Text = "Change Topic";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(859, 526);
+            this.ClientSize = new System.Drawing.Size(859, 573);
+            this.Controls.Add(this.button5);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.txtbxChannel);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtbxUser);
@@ -220,6 +252,9 @@
         private System.Windows.Forms.TextBox txtbxUser;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtbxChannel;
+        private System.Windows.Forms.Button button5;
     }
 }
 

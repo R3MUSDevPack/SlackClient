@@ -49,5 +49,18 @@ namespace R3MUS.Devpack.Slack.TestHarness
                 listBox1.Items.Insert(0, string.Format("Error: {0}", ex.Message));
             }
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var response = Plugin.SetChannelTopic(txtbxGroup.Text, txtbxChannel.Text, txtbxToken.Text, txtbxMsg.Text);
+                listBox1.Items.Insert(0, string.Format("Set topic in {0} to {1}: {2}", txtbxChannel.Text, txtbxMsg.Text, response.ToString()));
+             }
+            catch(Exception ex)
+            {
+                listBox1.Items.Insert(0, string.Format("Error: {0}", ex.Message));
+            }
+}
     }
 }

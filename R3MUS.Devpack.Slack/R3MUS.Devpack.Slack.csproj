@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChannelListResponse.cs" />
     <Compile Include="Client.cs" />
     <Compile Include="MessagePayload.cs" />
     <Compile Include="MessagePayloadAttachment.cs" />

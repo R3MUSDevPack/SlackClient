@@ -137,5 +137,57 @@ namespace R3MUS.Devpack.Slack
 
             return result.Contains("\"ok\":true");
         }
+
+        public static bool SetChannelTopic(string groupName, string channelName, string token, string newTopic)
+        {
+            var localUrl = string.Concat(url, "channels.setTopic?token={1}&channel={2}&topic={3}");
+            var result = string.Empty;
+            
+            string URI = string.Format(
+                localUrl,
+                groupName,
+                token,
+                GetChannelId(groupName, channelName, token),
+                newTopic,
+                "setInactive"
+                );
+
+            using (WebClient client = new WebClient())
+            {
+                byte[] response = client.DownloadData(URI);
+                result = Encoding.UTF8.GetString(response);
+            }
+
+            return result.Contains("\"ok\":true");
+        }
+
+        private static string GetChannelId(string groupName, string channelName, string token)
+        {
+            var localUrl = string.Concat(url, "channels.list?token={1}");
+            var failResult = false.ToString();
+
+            string URI = string.Format(
+                localUrl,
+                groupName,
+                token
+                );
+            var channelListResponse = new ChannelListResponse();
+
+            using (WebClient client = new WebClient())
+            {
+                byte[] response = client.DownloadData(URI);
+                var strResponse = Encoding.UTF8.GetString(response);
+                channelListResponse = (ChannelListResponse)JsonConvert.DeserializeObject<ChannelListResponse>(strResponse);
+            }
+
+            if(channelListResponse.Channels.ToList().Any(c => c.Name == channelName))
+            {
+                return channelListResponse.Channels.Where(c => c.Name == channelName).FirstOrDefault().Id;
+            }
+            else
+            {
+                return failResult;
+            }
+        }
     }
 }
