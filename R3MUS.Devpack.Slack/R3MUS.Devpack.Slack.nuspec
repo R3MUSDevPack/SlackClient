@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>R3MUS.Devpack.Slack</id>
+    <version>1.0.0.4</version>
+    <title>$title$</title>
+    <authors>Clyde en Marland</authors>
+    <owners>R3MUS.Devpack</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Access to Inbound and Outbound webhooks made easy</description>
+    <releaseNotes>Updated to .NET 4.5.2</releaseNotes>
+    <copyright>Copyright 2017</copyright>
+    <tags>Slack</tags>
+	<dependencies>
+	  <dependency id="Newtonsoft.Json" version="6.0.0.0" />
+	</dependencies>
+  </metadata>
+</package>
